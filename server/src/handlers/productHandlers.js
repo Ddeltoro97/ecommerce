@@ -1,7 +1,7 @@
-const {getAllProducts, getProductById, getProductByName} = require("../controllers/productControllers");
+const {getAllProducts, getProductById, getProductByName, getProductsByCategory} = require("../controllers/productControllers");
 
 const getProductsHandler = async (req, res) =>{
-    const {string} = req.body;
+    const {string, name} = req.body;
 
     if(string){
         try {
@@ -12,6 +12,18 @@ const getProductsHandler = async (req, res) =>{
         }
         return;
     }
+
+    if(name){
+        try {
+            const response = await getProductsByCategory(name);
+            res.status(200).json(response)
+        } catch (error) {
+            res.status(400).json({error: error.message});
+        }
+        return;
+    }
+
+
 
     try {
         const response = await getAllProducts();
