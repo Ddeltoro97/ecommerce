@@ -1,0 +1,29 @@
+const {Product} = require("../db");
+
+const getAllProducts = async() =>{
+    const allProducts = await Product.findAll();
+    return allProducts;
+}
+
+const getProductById = async(id) =>{
+    const product = await Product.findByPk(id);
+    return product;
+}
+
+const getProductByName = async(string) =>{
+    const allProducts = await getAllProducts();
+    const filteredProducts = allProducts.filter((product) =>{
+        return(
+            product.name.toLowerCase().includes(string) 
+        )
+    })
+
+    return filteredProducts;
+}
+
+
+module.exports = {
+    getAllProducts,
+    getProductById,
+    getProductByName
+}

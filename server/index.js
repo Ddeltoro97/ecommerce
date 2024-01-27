@@ -1,10 +1,15 @@
 const server = require("./src/app")
 const {conn} = require("./src/db")
-
+const {fetchInfo} = require("./src/utils")
 
 const PORT = 3001;
 
-server.listen(PORT, ()=>{
-    conn.sync({force: true});
-    console.log(`Server listening on port ${PORT}`)
-});
+conn
+  .sync({ force: true })
+  .then(() => {
+    server.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`)
+      fetchInfo();
+    });
+  })
+  .catch((error) => console.error(error));
