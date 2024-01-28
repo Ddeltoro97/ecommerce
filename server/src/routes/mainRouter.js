@@ -11,7 +11,7 @@ mainRouter.use("/products", productRouter);
 mainRouter.use("/users", userRouter);
 mainRouter.use("/sale", saleRouter);
 mainRouter.use("/categories", categoryRouter);
-mainRouter.use("./reviews", reviewRouter);
+mainRouter.use("/reviews", reviewRouter);
 
 
 module.exports = mainRouter;

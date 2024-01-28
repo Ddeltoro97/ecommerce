@@ -14,7 +14,7 @@ const getProductByName = async(string) =>{
     const allProducts = await getAllProducts();
     const filteredProducts = allProducts.filter((product) =>{
         return(
-            product.name.toLowerCase().includes(string)
+            product.name.toLowerCase().includes(string.toLowerCase())
         )
     })
 

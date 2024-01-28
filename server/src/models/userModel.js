@@ -13,7 +13,7 @@ module.exports = (sequelize) =>{
         },
         defaultAddress:{
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         email:{
             type: DataTypes.STRING,
@@ -35,3 +35,5 @@ module.exports = (sequelize) =>{
     },
     {timestamps: false})
 }
+
+// 0ef74676-f902-4906-84d2-62ed080191d7
