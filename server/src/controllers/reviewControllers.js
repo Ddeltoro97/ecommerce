@@ -1,9 +1,9 @@
 const {Review, Product, User} = require("../db");
-const {getUserByUsername} = require("./userControllers");
+const {getUserByEmail} = require("./userControllers");
 const {getProductByName} = require("./productControllers");
 
-const createReview = async(title, body, rating, username, product) =>{
-    const user = await getUserByUsername(username);
+const createReview = async(title, body, rating, email, product) =>{
+    const user = await getUserByEmail(email);
     const productToRate = await getProductByName(product);
 
     // console.log(user)
@@ -18,6 +18,27 @@ const createReview = async(title, body, rating, username, product) =>{
 
 }
 
+const getReviewByUser = async(email) =>{
+    const user = await getUserByEmail(email);
+
+    const reviews = await Review.findAll({where: {UserId: user.id}});
+
+    return reviews;
+
+}
+
+const getReviewByProduct = async(product) =>{
+    const prod = await Product.findOne({where: {name: product}});
+
+    console.log(prod)
+    const reviews = await Review.findAll({where: {ProductId: prod.id}});
+
+    return reviews;
+
+}
+
 module.exports = {
-    createReview
+    createReview,
+    getReviewByUser,
+    getReviewByProduct
 }
