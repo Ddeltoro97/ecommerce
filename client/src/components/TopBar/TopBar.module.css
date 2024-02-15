@@ -1,8 +1,98 @@
 .container{
-    background-color: green;
-    width: 99vw;
-    height: 66px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    /* background: linear-gradient(90deg, rgba(38,116,20,1) 36%, rgba(219,226,219,1) 72%, rgba(7,91,28,1) 92%);    */
+    background-color: #191E4C;
+    height: 42px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 13px;
+
+}
+
+
+
+.container h3{
+   margin-left: 7px;
+   margin-right: 7px;
+   cursor: pointer;
+   color: #E3E3E5;
+   font-size: 15px;
+   transition: color 0.3s ease;
+
+}
+
+.container h3:hover{
+    color: #2C99E8;
+}
+
+.container input{
+    height: 18px;
+    width: 250px;
+    margin-right: 3px;
+
+}
+
+.holder{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+}
+
+
+.flex{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 300px;
+}
+
+.categories{
+    color: #E3E3E5;
+}
+
+.categories:hover{
+    color: #2C99E8;
+}
+
+.glass{
+    cursor: pointer;
+    color: #E3E3E5;
+    transition: color 0.3s ease;
+}
+
+.glass:hover{
+    color: #2C99E8;
+}
+
+.cart{
+    font-size: 25px;
+    /* margin-right: 16px; */
+    cursor: pointer;
+    color: #E3E3E5;
+    transition: color 0.3s ease;
+}
+
+.cart:hover{
+    color: #2C99E8;
+}
+
+@media screen and (max-width: 470px){
+
+    .container h3{
+        font-size: 12px;
+    }
+
+    .container input{
+        width: 150px;
+    }
+  
+
+    .cart{
+        font-size: 20px;
+    }
 }

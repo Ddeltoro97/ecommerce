@@ -4,6 +4,7 @@ import Login from './pages/Login/Login'
 import User from './pages/User/User'
 import Product from './pages/Product/Product'
 import Search from './pages/Search/Search'
+import About from './pages/About/About'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/user/:id' element={<User/>}></Route>
         <Route path='/product/:id' element={<Product/>}></Route>
         <Route path='/search' element={<Search/>}></Route>
+        <Route path='/about' element={<About/>}></Route>
       </Routes>
     </div>
   )
