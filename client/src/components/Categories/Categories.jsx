@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
+
 import styles from "./Categories.module.css";
 
 export default function Categories({isOpen, renderCat, children}) {
@@ -25,7 +28,11 @@ export default function Categories({isOpen, renderCat, children}) {
             </div>
             {isOpen && categories.map(category =>{
                     return(
-                        <h3>{category.name}</h3>
+                        <div className={styles.classHolder}>
+                            <h3>{category.name}</h3>
+                            <FontAwesomeIcon icon={faAngleRight} />
+                        </div>
+                        
                     )
                 })}
         </div>

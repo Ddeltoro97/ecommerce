@@ -20,13 +20,27 @@
 .titleHolder{
     display: flex;
     background-color: #191E4C;
-    gap: 38%;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .titleHolder h3{
     margin-left: 10px;
     white-space: nowrap;
     color: #E3E3E5;
+}
+
+.classHolder{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.4s ease;
+}
+
+.classHolder:hover{
+    background-color: #2C99E8;
 }
 
 .blackScreen{
