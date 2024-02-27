@@ -1,5 +1,47 @@
-.container{
-    /* border: 3px solid black; */
-    height: 99vh;
-    margin-top: 0;
+.container {
+  /* border: 3px solid black; */
+  height: 99vh;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.promo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 14px; */
+  height: 560px;
+  background: #dcdedc;
+  gap: 30px;
+  min-width: 99vw;
+}
+
+.promo h1 {
+  max-width: 600px;
+  font-size: 40px;
+  @media screen and (max-width: 650px) {
+    font-size: 30px;
+  }
+}
+
+.promo h3 {
+  color: #8d908d;
+}
+
+.button {
+  background: #191e4c;
+  border: none;
+  color: #e3e3e5;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  outline: none;
+  border: none;
+  background: #2c99e8;
+  transition: background-color 0.3s ease;
+}
+
+.promoImg {
+  width: 170px;
 }

@@ -1,0 +1,40 @@
+.container{
+    padding: 0;
+    display: flex;
+    color: #1D0508;
+    justify-content: start; 
+}
+
+.categories{
+    position: fixed;
+    height: 100vh;
+    background-color: #dcdedc;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 300px;
+    margin-right: 1px solid white;
+    transition: all 0.4s ease;
+}
+
+.titleHolder{
+    display: flex;
+    background-color: #191E4C;
+    gap: 38%;
+}
+
+.titleHolder h3{
+    margin-left: 10px;
+    white-space: nowrap;
+    color: #E3E3E5;
+}
+
+.blackScreen{
+    position: fixed;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    opacity: 50%;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
