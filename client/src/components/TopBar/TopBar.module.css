@@ -1,3 +1,9 @@
+.topBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .container{
     /* background: linear-gradient(90deg, rgba(38,116,20,1) 36%, rgba(219,226,219,1) 72%, rgba(7,91,28,1) 92%);    */
     background-color: #191E4C;

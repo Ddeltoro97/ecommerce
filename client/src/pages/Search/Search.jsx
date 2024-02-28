@@ -1,8 +1,8 @@
-import TopBar from "../../components/TopBar/TopBar"
+import styles from './Search.module.css'
 
 export default function Search(){
     return(
-        <div>
+        <div className={styles.container}>
             <h1>Este es el componente Search</h1>
         </div>
         

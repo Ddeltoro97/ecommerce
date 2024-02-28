@@ -25,7 +25,7 @@ export default function TopBar({isOpen, renderCat}) {
 
 
   return (
-    <div style={{ position: "fixed" }}>
+    <div className={styles.topBar}>
       <div className={styles.container}>
         <div className={styles.holder}>
           <h3>Hello, user</h3>
@@ -52,7 +52,7 @@ export default function TopBar({isOpen, renderCat}) {
           <Link to="/about">
             <h3>About</h3>
           </Link>
-          <Link to="/search">
+          <Link to="/products">
             <h3>Products</h3>
           </Link>
           <Link onClick to={`/product/${random}`}>

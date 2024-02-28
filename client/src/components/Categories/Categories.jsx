@@ -6,7 +6,7 @@ import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Categories.module.css";
 
-export default function Categories({isOpen, renderCat, children}) {
+export default function Categories({isOpen, renderCat, setCategory, children}) {
 
     const [categories, setCategories] = useState([]);
 
@@ -17,7 +17,11 @@ export default function Categories({isOpen, renderCat, children}) {
         })
     }, []);
 
-    console.log(categories)
+    const navCategory = (category) =>{
+        setCategory(category);
+        renderCat();
+    }
+
     
   return (
     <div className={styles.container}>
@@ -28,7 +32,7 @@ export default function Categories({isOpen, renderCat, children}) {
             </div>
             {isOpen && categories.map(category =>{
                     return(
-                        <div className={styles.classHolder}>
+                        <div onClick={() => navCategory(category.name)} className={styles.classHolder}>
                             <h3>{category.name}</h3>
                             <FontAwesomeIcon icon={faAngleRight} />
                         </div>

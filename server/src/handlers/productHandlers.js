@@ -1,7 +1,8 @@
 const {getAllProducts, getProductById, getProductByName, getProductsByCategory} = require("../controllers/productControllers");
 
 const getProductsHandler = async (req, res) =>{
-    const {string, name} = req.body;
+    const {string} = req.body;
+    const {name} = req.query;
 
     if(string){
         try {
