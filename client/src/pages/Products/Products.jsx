@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import axios from 'axios';
 
@@ -16,12 +17,15 @@ export default function Products({category}){
             .then(response => {
                 setProducts(response.data)
             })
+        } else{
+            axios.get('http://localhost:3001/categories')
+            .then(response =>{
+                console.log(response.data)
+            })
         }
 
     }, [category]);
 
-    console.log(products)
-    console.log(category)
 
     return(
 
@@ -32,8 +36,10 @@ export default function Products({category}){
                 <div className={styles.productHolder}>
                 {products.map(product =>{
                     return(
+                        <Link to ={`/product/${product.id}`}>
                         <ProductCard
                          product={product}/>
+                         </Link>
                         )
                 })}
             </div>

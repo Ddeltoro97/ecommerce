@@ -20,6 +20,12 @@ module.exports = (sequelize) =>{
         },
         description:{
             type: DataTypes.TEXT,
+        },
+        rate:{
+            type: DataTypes.FLOAT
+        },
+        clicks:{
+            type: DataTypes.INTEGER
         }
     },
     {timestamps: false})

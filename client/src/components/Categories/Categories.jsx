@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,15 +31,20 @@ export default function Categories({isOpen, renderCat, setCategory, children}) {
                 <h3 className={styles.title}>{isOpen ? "Select Category" : ""}</h3>
                 <h3 onClick={renderCat} style={{cursor: 'pointer', fontWeight: '100'}}>{isOpen ? "X" : ""}</h3>
             </div>
+            <div>
             {isOpen && categories.map(category =>{
                     return(
+                        <Link to = '/products'>
                         <div onClick={() => navCategory(category.name)} className={styles.classHolder}>
                             <h3>{category.name}</h3>
                             <FontAwesomeIcon icon={faAngleRight} />
                         </div>
+                        </Link>
                         
                     )
                 })}
+            </div>
+          
         </div>
 
         {isOpen && <div onClick={renderCat} styles={{display: isOpen ? "block" : "none"}} className={styles.blackScreen}>

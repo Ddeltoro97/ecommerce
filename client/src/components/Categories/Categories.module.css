@@ -1,3 +1,18 @@
+::-webkit-scrollbar{
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-track{
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #3BB8C9;
+    border-radius: 15px;
+}
+
+
+
 .container{
     padding: 0;
     display: flex;
@@ -15,6 +30,11 @@
     width: 300px;
     margin-right: 1px solid white;
     transition: all 0.4s ease;
+    overflow-y: scroll; 
+
+    /* @media screen and (max-height: 1232px) {
+        overflow-y: scroll; 
+    } */
 }
 
 .titleHolder{

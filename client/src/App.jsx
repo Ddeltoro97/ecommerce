@@ -26,7 +26,8 @@ function App() {
     <div>
       <TopBar
       isOpen={isOpen}
-      renderCat={renderCat}/>
+      renderCat={renderCat}
+      setCategory={setCategory}/>
       <Categories
       isOpen={isOpen}
       renderCat={renderCat}

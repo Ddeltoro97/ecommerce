@@ -11,7 +11,7 @@ import Categories from "../Categories/Categories";
 
 import styles from "./TopBar.module.css";
 
-export default function TopBar({isOpen, renderCat}) {
+export default function TopBar({isOpen, renderCat, setCategory}) {
   const [featured, setFeatured] = useState({});
 
   useEffect(() => {
@@ -52,10 +52,10 @@ export default function TopBar({isOpen, renderCat}) {
           <Link to="/about">
             <h3>About</h3>
           </Link>
-          <Link to="/products">
+          <Link onClick={() => setCategory("")} to="/products">
             <h3>Products</h3>
           </Link>
-          <Link onClick to={`/product/${random}`}>
+          <Link to={`/product/${random}`}>
             <h3>Featured</h3>
           </Link>
         </div>

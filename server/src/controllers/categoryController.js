@@ -5,6 +5,12 @@ const getAllCategories = async() =>{
     return categories;
 }
 
+const getCategoryByName = async(name) =>{
+    const category = await Category.findOne({where: {name: name}});
+    return category
+}
+
 module.exports = {
-    getAllCategories
+    getAllCategories,
+    getCategoryByName
 }
