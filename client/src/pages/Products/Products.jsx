@@ -23,7 +23,7 @@ export default function Products({category, setCategory}){
         } 
     }, [category]);
 
-    console.log(categories);
+    console.log(products);
 
 
     return(
