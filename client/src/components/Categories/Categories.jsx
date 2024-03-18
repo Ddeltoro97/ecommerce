@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategories } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -9,13 +11,12 @@ import styles from "./Categories.module.css";
 
 export default function Categories({isOpen, renderCat, setCategory, children}) {
 
-    const [categories, setCategories] = useState([]);
+    const dispatch = useDispatch();
+    const categories = useSelector((state) => state.categories);
+   
 
     useEffect(() =>{
-        axios('http://localhost:3001/categories')
-        .then(response => {
-            setCategories(response.data)
-        })
+     dispatch(getCategories())
     }, []);
 
     const navCategory = (category) =>{

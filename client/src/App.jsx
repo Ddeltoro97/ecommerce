@@ -9,11 +9,13 @@ import Search from './pages/Search/Search'
 import About from './pages/About/About'
 import Categories from './components/Categories/Categories'
 
+
+import { CloudinaryContext } from 'cloudinary-react';
+
 import { useState } from 'react'
 import './App.css'
 
 function App() {
-
   const [isOpen, setIsOpen] = useState(false);
 
   const renderCat = () =>{
@@ -23,29 +25,31 @@ function App() {
   const [category, setCategory] = useState("")
 
   return (
-    <div>
-      <TopBar
-      isOpen={isOpen}
-      renderCat={renderCat}
-      setCategory={setCategory}/>
-      <Categories
-      isOpen={isOpen}
-      renderCat={renderCat}
-      setCategory={setCategory}>
-        <div className='routeHolder'>
-        <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
-        <Route path='/user/:id' element={<User/>}></Route>
-        <Route path='/product/:id' element={<Product/>}></Route>
-        <Route path='/search' element={<Search/>}></Route>
-        <Route path='/about' element={<About/>}></Route>
-        <Route path='/products' element={<Products
-        category={category}/>}></Route>
-      </Routes>
-        </div>
-      </Categories>
-    </div>
+    <CloudinaryContext>
+      <div>
+        <TopBar
+        isOpen={isOpen}
+        renderCat={renderCat}
+        setCategory={setCategory}/>
+        <Categories
+        isOpen={isOpen}
+        renderCat={renderCat}
+        setCategory={setCategory}>
+          <div className='routeHolder'>
+          <Routes>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/login' element={<Login/>}></Route>
+          <Route path='/user/:id' element={<User/>}></Route>
+          <Route path='/product/:id' element={<Product/>}></Route>
+          <Route path='/search' element={<Search/>}></Route>
+          <Route path='/about' element={<About/>}></Route>
+          <Route path='/products' element={<Products
+          category={category} setCategory={setCategory}/>}></Route>
+        </Routes>
+          </div>
+        </Categories>
+      </div>
+    </CloudinaryContext>
   )
 }
 

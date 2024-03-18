@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import axios from 'axios';
 
 import styles from './Products.module.css';
 
-export default function Products({category}){
+export default function Products({category, setCategory}){
 
     const [products, setProducts] = useState([]);
+    const dispatch = useDispatch();
 
+    const categories = useSelector((state) => state.categories)
     
     useEffect(() =>{
 
@@ -17,14 +20,10 @@ export default function Products({category}){
             .then(response => {
                 setProducts(response.data)
             })
-        } else{
-            axios.get('http://localhost:3001/categories')
-            .then(response =>{
-                console.log(response.data)
-            })
-        }
-
+        } 
     }, [category]);
+
+    console.log(categories);
 
 
     return(
@@ -34,19 +33,30 @@ export default function Products({category}){
             <div className={styles.container}>
                 <h2>{category}</h2>
                 <div className={styles.productHolder}>
-                {products.map(product =>{
-                    return(
-                        <Link to ={`/product/${product.id}`}>
-                        <ProductCard
-                         product={product}/>
-                         </Link>
-                        )
-                })}
+                    <div className={styles.secondHolder}>
+                        {products.map(product =>{
+                        return(
+                            <Link to ={`/product/${product.id}`}>
+                            <ProductCard
+                            product={product}/>
+                            </Link>
+                            )
+                    })}
+                    </div>
             </div>
         </div> : 
 
         <div className={styles.categoryHolder}>
-            <h1>Select Category</h1>
+            <h2>Select Category</h2>
+            <div className={styles.catHolder2}>
+                {categories.map((category) =>{
+                    return(
+                        <div className={styles.category} onClick={() => setCategory(category.name)}>
+                        <h2>{category.name}</h2>
+                        </div>
+                    )
+                })}
+            </div>
         </div>}
         </div>
        
