@@ -1,4 +1,5 @@
 const {Product, Category} = require("../db");
+const {getCategoryById} = require("./categoryController");
 
 const getAllProducts = async() =>{
     const allProducts = await Product.findAll();

@@ -1,8 +1,28 @@
 .container {
     /* border: 3px solid black; */
-    height: 99vh;
+    /* height: 99vh; */
+    display: grid;
+    place-items: center;
+    width: 99vw;
+    margin-top: 280px;
+  }
+
+  .secondHolder{
+    max-width: 1200px;
     display: flex;
     justify-content: center;
-    width: 100vw;
-    align-items: center;
+    flex-wrap: wrap;
   }
+
+.select{
+  width: 170px;
+  margin: 4px;
+  border: none;
+  height: 25px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.select:hover{
+  cursor: pointer;
+}

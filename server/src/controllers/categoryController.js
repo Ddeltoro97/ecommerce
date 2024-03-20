@@ -10,7 +10,13 @@ const getCategoryByName = async(name) =>{
     return category
 }
 
+const getCategoryById = async(id) =>{
+    const category = await Category.findOne({where:{id: id}})
+    return category
+}
+
 module.exports = {
     getAllCategories,
-    getCategoryByName
+    getCategoryByName,
+    getCategoryById
 }

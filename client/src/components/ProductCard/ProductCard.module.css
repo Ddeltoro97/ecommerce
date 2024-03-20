@@ -11,6 +11,7 @@
   border-radius: 2px;
   color: #191e4c;
   overflow: hidden;
+  margin: 15px;
   @media screen and (max-width: 770px) {
     border: 1px solid #ada8aa;
     box-shadow: 5px 5px 5px #ada8aa;

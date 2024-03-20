@@ -5,13 +5,13 @@ import {
   faMagnifyingGlass,
   faList,
 } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import Categories from "../Categories/Categories";
 
 import styles from "./TopBar.module.css";
 
-export default function TopBar({isOpen, renderCat, setCategory}) {
+
+export default function TopBar({isOpen, renderCat, setCategory, name, handleName, searchString, handleSearch}) {
   const [featured, setFeatured] = useState({});
 
   useEffect(() => {
@@ -23,7 +23,8 @@ export default function TopBar({isOpen, renderCat, setCategory}) {
 
   let random = Math.floor(Math.random() * 38);
 
-
+  // console.log('name', name)
+  // console.log('searchString', searchString);
   return (
     <div className={styles.topBar}>
       <div className={styles.container}>
@@ -31,8 +32,8 @@ export default function TopBar({isOpen, renderCat, setCategory}) {
           <h3>Hello, user</h3>
         </div>
         <div className={styles.flex}>
-          <input className={styles.searchbar} type="text" />
-          <FontAwesomeIcon className={styles.glass} icon={faMagnifyingGlass} />
+          <input className={styles.searchbar} type="text" onChange={handleName} />
+          <Link to = '/search'><FontAwesomeIcon className={styles.glass} onClick={handleSearch} icon={faMagnifyingGlass} /></Link>    
         </div>
         <div style={{ width: "50px" }}>
           <FontAwesomeIcon className={styles.cart} icon={faCartShopping} />

@@ -10,7 +10,7 @@ export default function ProductCard({product}){
             </div>
             <div className={styles.infoHolder}>
                 <h4>{product.name}</h4> 
-                <p>STARS GO HERE</p>
+                <p>{product.rate}</p>
                 <p>${product.price}</p>
             </div>
         </div>

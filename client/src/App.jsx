@@ -24,13 +24,29 @@ function App() {
 
   const [category, setCategory] = useState("")
 
+  const [name, setName] = useState("");
+  const [searchString, setSearchString] = useState("");
+
+  const handleName = (event) =>{
+    event.preventDefault();
+    setName(event.target.value);
+  }
+
+  const handleSearch = () =>{
+    setSearchString(name)
+  };
+
   return (
     <CloudinaryContext>
       <div>
         <TopBar
         isOpen={isOpen}
         renderCat={renderCat}
-        setCategory={setCategory}/>
+        setCategory={setCategory}
+        name={name}
+        handleName={handleName}
+        searchString={searchString}
+        handleSearch={handleSearch}/>
         <Categories
         isOpen={isOpen}
         renderCat={renderCat}
@@ -41,7 +57,8 @@ function App() {
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/user/:id' element={<User/>}></Route>
           <Route path='/product/:id' element={<Product/>}></Route>
-          <Route path='/search' element={<Search/>}></Route>
+          <Route path='/search' element={<Search
+          searchString={searchString}/>}></Route>
           <Route path='/about' element={<About/>}></Route>
           <Route path='/products' element={<Products
           category={category} setCategory={setCategory}/>}></Route>
