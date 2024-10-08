@@ -8,6 +8,7 @@ import Products from './pages/Products/Products';
 import Search from './pages/Search/Search'
 import About from './pages/About/About'
 import Categories from './components/Categories/Categories'
+import Cart from './pages/Cart/Cart'
 
 
 import { CloudinaryContext } from 'cloudinary-react';
@@ -16,6 +17,7 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+
   const [isOpen, setIsOpen] = useState(false);
 
   const renderCat = () =>{
@@ -62,6 +64,7 @@ function App() {
           <Route path='/about' element={<About/>}></Route>
           <Route path='/products' element={<Products
           category={category} setCategory={setCategory}/>}></Route>
+          <Route path='/cart' element={<Cart/>}></Route>
         </Routes>
           </div>
         </Categories>

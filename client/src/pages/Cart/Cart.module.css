@@ -1,0 +1,10 @@
+.container{
+    height: 99vh;
+    display: flex;
+    justify-content: center;
+}
+
+.nose{
+    padding-top: 150px;
+    text-align: center;
+}

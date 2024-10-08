@@ -70,3 +70,40 @@
     color: #191E4C;
 
 }
+
+.quantityManager{
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+
+.quantityManager input{
+    width: 45px;
+    border: none;
+    background-color: white;
+    text-align: center;
+}
+
+.blackScreen {
+    position: fixed;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    opacity: 50%;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+@media screen and (max-width: 821px) {
+    .pc{
+        display: block;
+    }
+    .pc img{
+        width: 300px;
+    }
+
+    .infoProduct{
+        width: 90%;
+    }
+}

@@ -25,7 +25,6 @@ export default function Products({category, setCategory}){
 
     // console.log(products);
 
-
     return(
 
         <div className={styles.container}>
@@ -38,7 +37,8 @@ export default function Products({category, setCategory}){
                         return(
                             <Link to ={`/product/${product.id}`}>
                             <ProductCard
-                            product={product}/>
+                            product={product}
+                            />
                             </Link>
                             )
                     })}

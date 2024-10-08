@@ -5,7 +5,7 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-export default function Search({searchString}){
+export default function Search({searchString, cart}){
     const dispatch = useDispatch();
     const products = useSelector((state) => state.products);
     const categories = useSelector((state) => state.categories);

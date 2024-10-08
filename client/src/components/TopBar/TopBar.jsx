@@ -36,7 +36,7 @@ export default function TopBar({isOpen, renderCat, setCategory, name, handleName
           <Link to = '/search'><FontAwesomeIcon className={styles.glass} onClick={handleSearch} icon={faMagnifyingGlass} /></Link>    
         </div>
         <div style={{ width: "50px" }}>
-          <FontAwesomeIcon className={styles.cart} icon={faCartShopping} />
+          <Link to = '/cart'><FontAwesomeIcon className={styles.cart} icon={faCartShopping} /></Link>
         </div>
       </div>
 

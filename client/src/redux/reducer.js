@@ -1,10 +1,12 @@
-import { GET_PRODUCTS, GET_CATEGORIES } from "./action-types";
+import { GET_PRODUCTS, GET_CATEGORIES, ADD_CART, REMOVE_CART, SET_CART} from "./action-types";
+import {removeItems} from "./utils";
 
 const initialState = {
     login: false,
     userId: null,
     products: [],
-    categories: []
+    categories: [],
+    cart: []
 }
 
 const reducer = (state = initialState, action) =>{
@@ -18,7 +20,17 @@ const reducer = (state = initialState, action) =>{
             return{
                 ...state,
                 categories: action.payload
-            }   
+            } 
+        case ADD_CART:
+            return{
+                ...state,
+                cart:[...state.cart, action.payload]
+            }
+        case REMOVE_CART:
+            return{
+                ...state,
+                cart: removeItems(state, action.payload)
+            }     
         default:
             return state
     }
