@@ -1,6 +1,7 @@
 .container{
     display: flex;
     justify-content: center;
+    width: 100vw;
 }
 
 .nose{
@@ -25,6 +26,7 @@
 
 .pc img{
    height: 500px;
+   object-fit: contain;
 }
 
 .pc h1{

@@ -27,6 +27,7 @@ const reducer = (state = initialState, action) =>{
                 cart:[...state.cart, action.payload]
             }
         case REMOVE_CART:
+            
             return{
                 ...state,
                 cart: removeItems(state, action.payload)

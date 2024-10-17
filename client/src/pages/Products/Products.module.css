@@ -66,3 +66,9 @@
   font-weight: 500;
   color: #E3E3E5;
 }
+
+@media screen and (max-width: 500px) {
+  .category h2{
+    font-size: 30px;
+  }
+}

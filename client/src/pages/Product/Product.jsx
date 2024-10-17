@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ConfirmCart from "../../components/Modals/ConfirmCart";
 import {Rate} from "antd";
 import axios from "axios"
@@ -19,7 +19,7 @@ export default function Product(){
     const {id} = useParams()
     const [product, setProduct] = useState({})
 
-    const[modal,setModal] = useState(true);
+    const[modal,setModal] = useState(false);
 
     const toggleModal = () =>{
         setModal(!modal);
@@ -37,7 +37,7 @@ export default function Product(){
         toggleModal()
     }
     
-    console.log(modal)
+    console.log(items)
     return(
         <div className={styles.container}>
             {modal && 

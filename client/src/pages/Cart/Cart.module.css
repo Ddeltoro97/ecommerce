@@ -1,10 +1,87 @@
 .container{
-    height: 99vh;
-    display: flex;
-    justify-content: center;
+    padding-top: 200px;
+   display: grid;
+   place-items: center;
+    width: 100vw;
+}
+
+.container h1{
+    color: #191E4C;
+
+}
+
+.checkout{
+    background-color: #191E4C;
+    color: white;
+    outline: none;
+    transition: background 0.3s ease;
+    border: none;
+}
+
+.checkout:hover{
+    background-color: #2C99E8;
 }
 
 .nose{
-    padding-top: 150px;
+    /* padding-top: 150px; */
     text-align: center;
+}
+
+.nose img{
+    width: 120px;
+    object-fit: contain;
+}
+
+.holdItem{
+    margin: 8px;
+    display: flex;
+    text-align: end;
+    padding: 20px;
+    color: #191E4C;
+    transition: transform 0.5s;
+}
+
+.holdItem:hover{
+    border: 1px solid #ada8aa;
+    box-shadow: 5px 5px 5px #ada8aa;
+    color: #2c99e8;
+}
+
+.holdItem h2{
+    width: 480px;
+}
+
+.holdItem h3{
+    color: black;
+}
+
+.holdItem button{
+    background-color: #191E4C;
+    color: white;
+    outline: none;
+    transition: background 0.3s ease;
+    border: none;
+    margin-left: 25px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.holdItem button:hover{
+    background-color: #2C99E8;
+}
+.holdItem button:focus{
+    outline: none;
+}
+
+@media screen and (max-width: 783px) {
+    .holdItem h2{
+        width: auto;
+        font-size: 15px;
+    }
+
+    .nose img{
+        width: 90px;
+    }
+
+    
 }

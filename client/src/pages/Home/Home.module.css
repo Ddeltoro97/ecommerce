@@ -43,3 +43,15 @@
 .promoImg {
   width: 170px;
 }
+
+@media screen and (max-width: 500px) {
+  .promo {
+    display: block;
+    margin-top: 120px;
+  }
+
+  .promo img{
+    width: 80%;
+    margin-top: 25px;
+  }
+}

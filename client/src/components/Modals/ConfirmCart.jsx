@@ -9,7 +9,7 @@ export default function ConfirmCart({modal, setModal}){
         <div className={styles.container}>
             <div className={styles.confirmWindow}>
                 <h2>The product has been added to cart</h2>  
-                <button className={styles.button} onClick={setModal}>Heu</button>
+                <button className={styles.button} onClick={setModal}>Ok</button>
             </div>
             <div className={styles.blackscreen}>
             </div>    
