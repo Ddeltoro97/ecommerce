@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GET_PRODUCTS, GET_CATEGORIES, ADD_CART, REMOVE_CART } from "./action-types";
+import { GET_PRODUCTS, GET_CATEGORIES, ADD_CART, REMOVE_CART, LOGIN } from "./action-types";
 
 export function getProducts(){
     return async function(dispatch){
@@ -35,3 +35,18 @@ export function removeCart (product){
         payload: product
     }
 }
+
+export function login(username, password) {
+    return async (dispatch) => {
+      try {
+        const response = await axios.get('http://localhost:3001/users', { username, password });
+        
+        dispatch({
+          type: LOGIN,
+          payload: response.data 
+        });
+      } catch (error) {
+        console.error("Login failed:", error);
+      }
+    };
+  }

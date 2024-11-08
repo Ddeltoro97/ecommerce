@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useSelector, useDispatch } from 'react-redux';
 
 import styles from "./TopBar.module.css";
 
@@ -29,7 +30,7 @@ export default function TopBar({isOpen, renderCat, setCategory, name, handleName
     <div className={styles.topBar}>
       <div className={styles.container}>
         <div className={styles.holder}>
-          <h3>Hello, user</h3>
+          {}
         </div>
         <div className={styles.flex}>
           <input className={styles.searchbar} type="text" onChange={handleName} />
@@ -56,7 +57,7 @@ export default function TopBar({isOpen, renderCat, setCategory, name, handleName
           <Link onClick={() => setCategory("")} to="/products">
             <h3>Products</h3>
           </Link>
-          <Link to={`/product/${random}`}>
+          <Link to={`/product/1`}>
             <h3>Featured</h3>
           </Link>
         </div>

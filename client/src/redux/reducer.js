@@ -1,4 +1,4 @@
-import { GET_PRODUCTS, GET_CATEGORIES, ADD_CART, REMOVE_CART, SET_CART} from "./action-types";
+import { GET_PRODUCTS, GET_CATEGORIES, ADD_CART, REMOVE_CART, SET_CART, LOGIN} from "./action-types";
 import {removeItems} from "./utils";
 
 const initialState = {
@@ -26,12 +26,18 @@ const reducer = (state = initialState, action) =>{
                 ...state,
                 cart:[...state.cart, action.payload]
             }
-        case REMOVE_CART:
-            
+        case REMOVE_CART: 
             return{
                 ...state,
                 cart: removeItems(state, action.payload)
-            }     
+            }
+        case LOGIN:{
+            return{
+                ...state,
+                login: true,
+                userId: action.payload
+            }
+        }         
         default:
             return state
     }
